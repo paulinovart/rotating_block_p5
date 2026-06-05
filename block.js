@@ -21,7 +21,16 @@ class Block {
         pop();
     }
 
+
+draw(){
+    console.log(pickedColor)
+}
+
     move(){
+
+
+ 
+
         
         let distance = dist(mouseX, mouseY,this.x, this.y );
         if (distance < distMouse){    
