@@ -22,7 +22,7 @@ function setup() {
 }
 
 function draw(){
-background (220)
+background (150)
     for (let i=0; i<cols; i++){
 
         for (j=0; j<rows; j++){
