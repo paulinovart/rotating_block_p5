@@ -3,12 +3,19 @@ class Block {
         this.x = x;
         this.y = y;
         this.angle = 0;
+        this.borderColor = "#2CFF05";
+        this.bgColor = "#1E1F1F";
+        this.strokeWeight = 0.7
     }
+
+
 
     display() {
         push();
         translate(this.x, this.y); // set origin point, to rotate from  the right point => rn origin = center
-
+        fill(this.bgColor);
+        stroke(this.borderColor);
+        strokeWeight(this.strokeWeight);
         rotate(this.angle);
         rect(0, 0, size, size ); // position x du coin gauche, position y du coin gauche, longueur, hauteur
         pop();
