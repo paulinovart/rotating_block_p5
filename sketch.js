@@ -1,10 +1,12 @@
+//import GUI from 'lil-gui';
+
 
 let distMouse = 50;
 //let b;
 let cols; let rows; let size = 50;
 let blocks = [];
-canvasHeight = window.innerHeight - 70;
-canvasWidth = window.innerWidth - 70;
+let canvasHeight = window.innerHeight - 70;
+let canvasWidth = window.innerWidth - 70;
 
 function setup() {
     createCanvas(canvasWidth, canvasHeight);
@@ -24,7 +26,7 @@ function setup() {
 }
 
 function draw(){
-background ("black")
+    background ("black")
     for (let i=0; i<cols; i++){
 
         for (j=0; j<rows; j++){
@@ -33,8 +35,7 @@ background ("black")
         }
     }
 
-
-
+//console.log(window.gui)
 
    // background(220);
    //  b.move();
@@ -46,3 +47,6 @@ background ("black")
    
 
 }
+
+
+window.gui.add( document, 'title' );

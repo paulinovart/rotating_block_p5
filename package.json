@@ -1,0 +1,25 @@
+{
+  "name": "rotating_block_p5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulinovart/rotating_block_p5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulinovart/rotating_block_p5/issues"
+  },
+  "homepage": "https://github.com/paulinovart/rotating_block_p5#readme",
+  "devDependencies": {
+    "lil-gui": "^0.21.0"
+  },
+  "dependencies": {
+    "p5": "^2.3.0"
+  }
+}
