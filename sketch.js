@@ -1,7 +1,7 @@
 
 let distMouse = 50;
 //let b;
-let cols; let rows; let size = 30;
+let cols; let rows; let size = 50;
 let blocks = [];
 canvasHeight = window.innerHeight - 70;
 canvasWidth = window.innerWidth - 70;
@@ -24,7 +24,7 @@ function setup() {
 }
 
 function draw(){
-background ("#1E1F1F")
+background ("black")
     for (let i=0; i<cols; i++){
 
         for (j=0; j<rows; j++){

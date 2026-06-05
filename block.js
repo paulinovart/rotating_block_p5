@@ -5,7 +5,7 @@ class Block {
         this.angle = 0;
         this.borderColor = "#2CFF05";
         this.bgColor = "#1E1F1F";
-        this.strokeWeight = 0.7
+        this.strokeWeight = 1
     }
 
 
