@@ -15,7 +15,7 @@ class Block {
         translate(this.x, this.y); // set origin point, to rotate from  the right point => rn origin = center
         fill(this.bgColor);
         stroke(this.borderColor);
-        strokeWeight(this.strokeWeight);
+        strokeWeight(this.borderWeight);
         rotate(this.angle);
         rect(0, 0, size, size ); // position x du coin gauche, position y du coin gauche, longueur, hauteur
         pop();
@@ -23,7 +23,7 @@ class Block {
 
 
 draw(){
-    console.log(pickedColor)
+    console.log(pickedBorderColor)
 }
 
     move(){

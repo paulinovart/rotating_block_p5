@@ -2,12 +2,13 @@
 
 
 let distMouse = 50;
-//let b;
-let cols; let rows; let size = 50;
+let cols; let rows; let size = 50; 
 let blocks = [];
 let canvasHeight = window.innerHeight - 70;
 let canvasWidth = window.innerWidth - 70;
-let pickedColor;
+let pickedBorderColor;
+let pickedSquareColor;
+let pickedStrokeWeight;
 
 
 
@@ -18,31 +19,82 @@ const gui = new window.GUI();
 
 blockParams = {
 	size ,
-    pickedColor : "#2CFF05"
+    borderColor : "#2CFF05",
+    squareColor : "#1E1F1F",
+    borderWeight : 1 ,
+    backgroundColor : "#000000",
 }
-//gui.add(document, 'title');
-gui.addColor(blockParams, 'pickedColor').onChange(value => {
-    pickedColor = value;
+
+
+
+pickedBorderColor = blockParams.borderColor;
+pickedSquareColor = blockParams.squareColor;
+pickedStrokeWeight = blockParams.borderWeight;
+
+
+gui.addColor(blockParams, 'squareColor').onChange(value => {
+    pickedSquareColor = value;
+
+    cols = Math.floor(width / size);
+    rows = Math.floor(height / size);
+
     blocks = [];
     for (let i = 0; i < cols; i++) {
         blocks[i] = [];
         for (let j = 0; j < rows; j++) {
             blocks[i][j] = new Block(size / 2 + i * size, size / 2 + j * size);
-            blocks[i][j].borderColor = pickedColor;
+            blocks[i][j].borderColor = pickedBorderColor;
+            blocks[i][j].bgColor = pickedSquareColor;
+            blocks[i][j].borderWeight = pickedStrokeWeight;
         }
     }
-    
-
-
-
-
-   // for (let i = 0; i < blocks.length; i++) {
-   //     console.log(blocks.length)
-   // }
-
-   
 
 });
+
+
+gui.addColor(blockParams, 'borderColor').onChange(value => {
+    pickedBorderColor = value;
+
+    cols = Math.floor(width / size);
+    rows = Math.floor(height / size);
+
+    blocks = [];
+    for (let i = 0; i < cols; i++) {
+        blocks[i] = [];
+        for (let j = 0; j < rows; j++) {
+            blocks[i][j] = new Block(size / 2 + i * size, size / 2 + j * size);
+            blocks[i][j].borderColor = pickedBorderColor;
+            blocks[i][j].bgColor = pickedSquareColor;
+            blocks[i][j].borderWeight = pickedStrokeWeight;
+        }
+    }
+
+});
+
+
+
+
+
+gui.add(blockParams, 'borderWeight',1, 8, 1).onChange(value => {
+    pickedStrokeWeight = value;
+
+    cols = Math.floor(width / size);
+    rows = Math.floor(height / size);
+
+    blocks = [];
+    for (let i = 0; i < cols; i++) {
+        blocks[i] = [];
+        for (let j = 0; j < rows; j++) {
+            blocks[i][j] = new Block(size / 2 + i * size, size / 2 + j * size);
+            blocks[i][j].borderColor = pickedBorderColor;
+            blocks[i][j].bgColor = pickedSquareColor;
+            blocks[i][j].borderWeight = pickedStrokeWeight;
+        }
+    }
+
+});
+
+
 
 gui.add(blockParams, 'size', 30, 70, 5).onChange(value => {
     // update the global size used by the sketch
@@ -59,10 +111,14 @@ gui.add(blockParams, 'size', 30, 70, 5).onChange(value => {
         blocks[i] = [];
         for (let j = 0; j < rows; j++) {
             blocks[i][j] = new Block(size / 2 + i * size, size / 2 + j * size);
-            blocks[i][j].borderColor = pickedColor;
+            blocks[i][j].borderColor = pickedBorderColor;
+            blocks[i][j].bgColor = pickedSquareColor;
+           blocks[i][j].borderWeight = pickedStrokeWeight;
         }
     }
 });
+
+
 
 
 
@@ -79,18 +135,28 @@ function setup() {
         blocks[i] = [];
         for (j=0; j<rows; j++){
             blocks[i][j] = new Block(size/2 + i*size, size/2 + j*size); //pour set la position en fonction du nombre de carrés déjà faits
+            blocks[i][j].borderColor = pickedBorderColor;
+            blocks[i][j].bgColor = pickedSquareColor;
+            blocks[i][j].borderWeight = pickedStrokeWeight;
         }
+
     }
 
 
 }
 
+
+
+
+
+gui.addColor(blockParams, 'backgroundColor');
+
 function draw(){
-    //console.log(pickedColor);
+
 
 
   
-    background ("black")
+    background(blockParams.backgroundColor)
     for (let i=0; i<cols; i++){
 
         for (j=0; j<rows; j++){
