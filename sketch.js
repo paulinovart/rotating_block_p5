@@ -75,7 +75,7 @@ gui.addColor(blockParams, 'borderColor').onChange(value => {
 
 
 
-gui.add(blockParams, 'borderWeight',1, 8, 1).onChange(value => {
+gui.add(blockParams, 'borderWeight',0.2, 5, 0.1).onChange(value => {
     pickedStrokeWeight = value;
 
     cols = Math.floor(width / size);
@@ -96,7 +96,7 @@ gui.add(blockParams, 'borderWeight',1, 8, 1).onChange(value => {
 
 
 
-gui.add(blockParams, 'size', 30, 70, 5).onChange(value => {
+gui.add(blockParams, 'size', 20, 70, 5).onChange(value => {
     // update the global size used by the sketch
     size = value;
 
